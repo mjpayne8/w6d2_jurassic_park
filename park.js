@@ -13,14 +13,14 @@ Park.prototype.removeDinosaur = function(dinosaur_to_remove){
   this.dinosaurs.splice(dino_index,1);
 };
 
-Park.prototype.findType = function(type){
-  let type_array = [];
+Park.prototype.findSpecies = function(species){
+  let species_array = [];
   for (dinosaur of this.dinosaurs){
-    if (dinosaur.type === type){
-      type_array.push(dinosaur);
+    if (dinosaur.species === species){
+      species_array.push(dinosaur);
     }
   }
-  return type_array;
+  return species_array;
 };
 
 Park.prototype.maxDinosaur = function() {
@@ -47,6 +47,13 @@ Park.prototype.yearlyVisitors = function(){
 
 Park.prototype.yearlyTakings = function(){
   return this.yearlyVisitors()*this.price;
+};
+
+Park.prototype.removeSpecies = function(species){
+  const species_array= this.findSpecies(species);
+  for (dinosaur of species_array){
+    this.removeDinosaur(dinosaur);
+  }
 };
 
 module.exports = Park;

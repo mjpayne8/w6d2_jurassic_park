@@ -43,8 +43,8 @@ describe("Park", function(){
 
   it("should find all dinosaurs of species",function(){
     park.addDinosaur(dinosaur2);
-    const actual = park.findType('Carnivore');
-    assert.deepStrictEqual(actual,[dinosaur1]);
+    const actual = park.findSpecies('Steggasaurus');
+    assert.deepStrictEqual(actual,[dinosaur2]);
   });
 
   it("should find the dinosaur with most visitors",function(){
@@ -67,6 +67,13 @@ describe("Park", function(){
   it("should find total yearly takings",function(){
     const actual = park.yearlyTakings();
     assert.strictEqual(actual,36500*20);
+  });
+
+  it("should be able to remove a dinosaur species",function(){
+    park.addDinosaur(dinosaur1);
+    park.removeSpecies("T-Rex");
+    const actual = park.dinosaurs;
+    assert.deepStrictEqual(actual,[]);
   });
 
 });
