@@ -56,4 +56,16 @@ Park.prototype.removeSpecies = function(species){
   }
 };
 
+Park.prototype.numberOfType = function(){
+  const type_object = {
+    Carnivore: 0,
+    Herbivore: 0,
+    Omnivore: 0
+  };
+  for (dinosaur of this.dinosaurs){
+    type_object[dinosaur.type] += 1;
+  }
+  return type_object;
+};
+
 module.exports = Park;

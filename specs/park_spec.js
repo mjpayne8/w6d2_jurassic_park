@@ -76,4 +76,12 @@ describe("Park", function(){
     assert.deepStrictEqual(actual,[]);
   });
 
+  it("should be able to count diet types of dinosaurs",function(){
+    park.addDinosaur(dinosaur2);
+    const actual = park.numberOfType();
+    assert.strictEqual(actual.Carnivore,1);
+    assert.strictEqual(actual.Herbivore,1);
+    assert.strictEqual(actual.Omnivore,0);
+  });
+
 });
