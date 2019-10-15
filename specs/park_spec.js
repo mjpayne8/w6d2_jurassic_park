@@ -35,4 +35,9 @@ describe("Park", function(){
     assert.deepStrictEqual(actual,[dinosaur1,dinosaur2]);
   });
 
+  it("should be able to remove a dinosaur",function(){
+    park.removeDinosaur(dinosaur1);
+    const actual = park.dinosaurs;
+    assert.deepStrictEqual(actual,[]);
+  });
 });
