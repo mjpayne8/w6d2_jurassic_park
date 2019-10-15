@@ -33,4 +33,20 @@ Park.prototype.maxDinosaur = function() {
   return max_dinosaur;
 };
 
+Park.prototype.dailyVisitors = function(){
+  let total = 0;
+  for (dinosaur of this.dinosaurs){
+    total += dinosaur.visitors;
+  }
+  return total;
+};
+
+Park.prototype.yearlyVisitors = function(){
+  return this.dailyVisitors()*365;
+};
+
+Park.prototype.yearlyTakings = function(){
+  return this.yearlyVisitors()*this.price;
+};
+
 module.exports = Park;

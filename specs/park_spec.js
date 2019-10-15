@@ -51,6 +51,22 @@ describe("Park", function(){
     park.addDinosaur(dinosaur2);
     const actual = park.maxDinosaur()
     assert.strictEqual(actual,dinosaur1);
-  })
+  });
+
+  it("should find total daily visitors",function(){
+    park.addDinosaur(dinosaur2);
+    const actual = park.dailyVisitors();
+    assert.strictEqual(actual,150);
+  });
+
+  it("should find total yearly visitors",function(){
+    const actual = park.yearlyVisitors();
+    assert.strictEqual(actual,36500);
+  });
+
+  it("should find total yearly takings",function(){
+    const actual = park.yearlyTakings();
+    assert.strictEqual(actual,36500*20);
+  });
 
 });
