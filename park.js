@@ -23,4 +23,14 @@ Park.prototype.findType = function(type){
   return type_array;
 };
 
+Park.prototype.maxDinosaur = function() {
+  let max_dinosaur = this.dinosaurs[0]
+  for(dinosaur of this.dinosaurs){
+    if(dinosaur.visitors > max_dinosaur.visitors){
+      max_dinosaur = dinosaur;
+    }
+  }
+  return max_dinosaur;
+};
+
 module.exports = Park;

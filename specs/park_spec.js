@@ -46,4 +46,11 @@ describe("Park", function(){
     const actual = park.findType('Carnivore');
     assert.deepStrictEqual(actual,[dinosaur1]);
   });
+
+  it("should find the dinosaur with most visitors",function(){
+    park.addDinosaur(dinosaur2);
+    const actual = park.maxDinosaur()
+    assert.strictEqual(actual,dinosaur1);
+  })
+
 });
