@@ -13,4 +13,14 @@ Park.prototype.removeDinosaur = function(dinosaur_to_remove){
   this.dinosaurs.splice(dino_index,1);
 };
 
+Park.prototype.findType = function(type){
+  let type_array = [];
+  for (dinosaur of this.dinosaurs){
+    if (dinosaur.type === type){
+      type_array.push(dinosaur);
+    }
+  }
+  return type_array;
+};
+
 module.exports = Park;

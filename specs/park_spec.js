@@ -40,4 +40,10 @@ describe("Park", function(){
     const actual = park.dinosaurs;
     assert.deepStrictEqual(actual,[]);
   });
+
+  it("should find all dinosaurs of species",function(){
+    park.addDinosaur(dinosaur2);
+    const actual = park.findType('Carnivore');
+    assert.deepStrictEqual(actual,[dinosaur1]);
+  });
 });
